@@ -1,0 +1,10 @@
+<p-carousel [value]="carousel" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="3000">
+
+
+    <ng-template let-carousel pTemplate="item">
+        <div class="">
+            <img [src]="carousel.imagen"  class="border-round" style="width: 100%;">
+        </div>
+    </ng-template>
+    
+</p-carousel>

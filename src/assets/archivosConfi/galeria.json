@@ -1,0 +1,16 @@
+{
+    "data":[
+        {
+            "itemImageSrc": "assets/carousel01.png",
+            "thumbnailImageSrc": "https://primefaces.org/cdn/primeng/images/galleria/galleria1s.jpg",
+            "alt": "Description for Image 1",
+            "title": "Title 1"
+          },
+          {
+            "itemImageSrc": "assets/carousel02.png",
+            "thumbnailImageSrc": "https://primefaces.org/cdn/primeng/images/galleria/galleria1s.jpg",
+            "alt": "Description for Image 1",
+            "title": "Title 1"
+          }
+    ]
+}

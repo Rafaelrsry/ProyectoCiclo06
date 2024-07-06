@@ -1,0 +1,54 @@
+<div class="flex justify-content-center flex-wrap">
+
+
+    <div class="formgrid grid">
+        <div class="field col-12 md:col-6">
+            <label for="firstname6">Email</label>
+            <input id="firstname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+
+        <div class="field col-12 md:col-6">
+            <label for="lastname6">Nombre</label>
+            <input id="lastname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+       
+        <div class="field col-12 md:col-6">
+            <label for="firstname6">Apellido</label>
+            <input id="firstname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+        
+        <div class="field col-12 md:col-6">
+            <label for="lastname6">Contraseña</label>
+            <input id="lastname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+       
+        <div class="field col-12 md:col-6">
+            <label for="firstname6">Dni</label>
+            <input id="firstname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+
+        <div class="field col-12 md:col-6">
+            <label for="firstname6">Genero</label>
+            <div>
+                <p-checkbox class="mr-2"
+                [(ngModel)]="genero"
+                label="Masculino" 
+                name="masculino" 
+                value="masculino" />
+    
+                <p-checkbox 
+                [(ngModel)]="genero"
+                label="Femenino"
+                name="femenino" 
+                value="femenino" />
+            </div>
+         
+        </div>
+        <div>
+            <p-button class="m-2" label="Registrarse" />
+            <p-button (click)="irLogin()" label="Login" severity="success" />
+        </div>
+       
+    </div>
+    
+</div>

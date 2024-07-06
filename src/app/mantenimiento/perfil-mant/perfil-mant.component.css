@@ -1,0 +1,34 @@
+.contenedor {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;    /* Centra verticalmente */
+    height: 100vh;          /* Altura del contenedor igual a la altura de la ventana del navegador */
+  }
+
+  @media (max-width: 950px) {
+   
+
+
+    .divider-vertical {
+        display: none !important;
+    }
+
+    .divider-horizontal {
+        display: block !important;
+    }
+/*
+
+    .card.w-4 {
+        width: auto !important;
+    }*/
+}
+
+@media (min-width: 950px) {
+    .divider-vertical {
+        display: block !important;
+    }
+
+    .divider-horizontal {
+        display: none !important;
+    }
+}

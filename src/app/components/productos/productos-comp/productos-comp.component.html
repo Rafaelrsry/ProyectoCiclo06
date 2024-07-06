@@ -1,0 +1,32 @@
+
+
+<div  class="flex justify-content-center flex-wrap">
+    
+    <div *ngFor="let item of producto" class="grid nested-grid">
+        <div class="col">
+            <div class="text-center p-3">
+                <div class="card flex justify-content-center">
+                    <p-card header="{{item.nombre}}" subheader="S/. {{item.precio}}" [style]="{ width: '300px' }">
+                        <ng-template pTemplate="header">
+                            <img alt="Card" style="width: 200px; height: 200px;"  src="/assets/{{item.imagen}}" />
+                        </ng-template>
+                        <p>
+                           {{item.descripcion}}
+                        </p>
+                        <ng-template pTemplate="footer">
+                            <div class="flex gap-3 mt-1">
+                              
+                                <p-button label="Concatarnos" class="w-full" styleClass="w-full" />
+                            </div>
+                        </ng-template>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+
+        
+       
+        
+    </div>
+    
+    

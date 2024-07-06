@@ -1,0 +1,22 @@
+@media (max-width: 950px) {
+
+
+    .divider-vertical {
+        display: none !important;
+    }
+
+    .divider-horizontal {
+        display: block !important;
+    }
+
+}
+
+@media (min-width: 951px) {
+    .divider-vertical {
+        display: block !important;
+    }
+
+    .divider-horizontal {
+        display: none !important;
+    }
+}

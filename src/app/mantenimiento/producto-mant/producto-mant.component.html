@@ -1,0 +1,35 @@
+<div class="card">
+    <p-table [value]="producto" [tableStyle]="{'min-width': '60rem'}">
+        <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+                Products
+                <p-button icon="pi pi-refresh" />
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                
+                <th>Decripcion</th>
+                <th>Status</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{product.nombre}}</td>
+                <td><img [src]="'/assets/' + product.imagen" [alt]="product.name" width="100" class="shadow-4" /></td>
+                <td>{{product.precio | currency:'S/.'}}</td>
+                <td>{{product.descripcion}}</td>
+                <td><p-rating [(ngModel)]="product.estrellas" [readonly]="true" [cancel]="false" /></td>
+                <!--<td><p-tag [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)" /></td>-->
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+                Todos los productos en total {{producto ? producto.length : 0 }} .
+            </div>
+        </ng-template>
+    </p-table>
+</div>

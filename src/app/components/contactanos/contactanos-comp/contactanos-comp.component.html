@@ -1,0 +1,101 @@
+
+
+<div *ngFor = "let row of contactanos" class="card flex justify-content-center">
+    <p-card header="{{row.titulo}}">
+    <div class="grid">
+     <div  class="col-12 md:col lg:col">
+        <p>{{row.descripciontitulo}}</p>
+        <h2>{{row.llamanos}}</h2>
+        <p>{{row.descripcionllamanos}}</p>
+        <h2>{{row.correo}}</h2>
+        <p> {{row.descripcioncorreo}}</p>
+        
+
+        <form>
+            <input type="hidden" name="idcontactanos" [value]="row.idcontactanos" />
+            <p-button type="button" (click)="openModal(row);showDialog()" label="Editar" />
+        </form>
+      
+            <p-dialog 
+                header="Header" 
+                [modal]="true"
+                [(visible)]="visible" 
+                [style]="{ width: '50rem' }" 
+                [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" 
+                [maximizable]="true">
+                   
+
+                <form  [formGroup]="contactanosFrm" action="">
+                    <div class="field">
+
+                        <input  class="hidden" formControlName="idcontactanos"  type="text">
+                        <label for="Titulo">Titulo</label>
+                        <input placeholder="{{row.titulo}}"  formControlName="titulo" id="Titulo" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                    </div>
+                    <div class="field">
+                        <label for="Descripcion">Descripcion</label>
+                        <input  formControlName="descripciontitulo" id="Descripcion" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                    </div>
+
+                    <div class="field">
+                        <label for="Llamanos">Llamanos</label>
+                        <input formControlName="llamanos" id="Llamanos" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                    </div>
+                    <div class="field">
+                        <label for="DescripcionLla">Descripcion Llamanos</label>
+                        <input formControlName="descripcionllamanos" id="DescripcionLla" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                    </div>
+
+                    <div class="field">
+                        <label for="Correo">Correo</label>
+                        <input formControlName="correo" id="Correo" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                    </div>
+                    <div class="field">
+                        <label for="Correodes">Correo Descripcion</label>
+                        <input formControlName="descripcioncorreo" id="Correodes" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                    </div>
+
+                    <p-button label="Save" (click)=" actualizar();visible = false" />
+                </form>
+                
+            </p-dialog>
+    </div>
+     <!-- Linea-->
+         <!-- Divider vertical -->
+         <p-divider class="divider-vertical" layout="vertical" />
+
+    <!-- Formulario-->
+     <div class="col-12 formgrid grid md:col lg:col">
+        <div class="field col-12 md:col-6">
+            <label for="firstname6">Nombre</label>
+            <input id="firstname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+        <div class="field col-12 md:col-6">
+            <label for="lastname6">Celular</label>
+            <input id="lastname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+
+        <div class="field col-12 md:col-6">
+            <label for="lastname6">Email</label>
+            <input id="lastname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+        <div class="field col-12 md:col-6">
+            <label for="lastname6">Compañia</label>
+            <input id="lastname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+    
+        <div class="field col-12">
+            <label for="address">Descripcion</label>
+            <textarea id="address" type="text" rows="4" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"></textarea>
+        </div>
+        
+        <div>
+            <p-button label="Enviar" />
+        </div>
+      
+      
+    </div>
+    </div>
+    
+    </p-card>
+</div>

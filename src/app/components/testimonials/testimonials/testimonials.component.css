@@ -1,0 +1,30 @@
+@media (max-width: 950px) {
+    .flex {
+        display: block !important;
+    }
+    
+
+
+    .divider-vertical {
+        display: none !important;
+    }
+
+    .divider-horizontal {
+        display: block !important;
+    }
+/*
+
+    .card.w-4 {
+        width: auto !important;
+    }*/
+}
+
+@media (min-width: 951px) {
+    .divider-vertical {
+        display: block !important;
+    }
+
+    .divider-horizontal {
+        display: none !important;
+    }
+}

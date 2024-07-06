@@ -1,0 +1,67 @@
+<div  *ngFor="let item of nosotros">
+    <h1 class="hidden">{{item.idnosotros}}</h1>
+    <h1 class="hidden">{{item.titulo}}</h1>
+   <h2 class="hidden">{{item.descripcion}}</h2> 
+  
+
+
+<div class="card flex justify-content-center">
+          <p-button label="Editar Nosotros" (click)="showDialog();openModal(item);"></p-button>
+    <form [formGroup]="nosotrosForm" action="">
+        <p-dialog  header="Actualiza" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+        <span class="p-text-secondary block mb-5">Actualiza Nosotros</span>
+        <input pInputText id="titulo" class="flex-auto hidden" autocomplete="off"  formControlName="idnosotros"  />
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="titulo" class="font-semibold w-6rem">titulo</label>
+            <input pInputText id="titulo" class="flex-auto" autocomplete="off"  formControlName="titulo"/>
+        </div>
+        <div class="flex align-items-center gap-3 mb-5">
+            <label for="descripcion" class="font-semibold w-6rem"  >descripcion</label>
+            <textarea formControlName="descripcion"
+    rows="5"
+    cols="30" 
+    pInputTextarea 
+    >
+</textarea>
+        </div>
+        <div class="flex justify-content-end gap-2">
+            <p-button label="Cancel" severity="secondary" (click)="visible = false" />
+            <p-button label="Save" (click)=" actualizar(); irhome();visible = false" />
+        </div>
+    </p-dialog>
+</form>
+</div>
+
+<div *ngFor="let item of nosotros" pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="flex justify-content-center flex-wrap mt-2 mb-4 animation-duration-1000">
+    <h1>{{item.titulo}}</h1>
+    </div>
+
+    
+    
+
+<div *ngFor="let item of nosotros" pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="flex justify-content-center m-2 animation-duration-1000">
+   
+    <p-scrollPanel [style]="{  height: '150px' }" class="w-5">
+       {{item.descripcion}}
+    </p-scrollPanel >
+    <p-divider layout="vertical" />
+    <div class="card w-5 ">
+        <p-galleria 
+            [value]="images" 
+            [showIndicators]="true" 
+            [showThumbnails]="false" 
+            [responsiveOptions]="responsiveOptions" 
+            [containerStyle]="{ 'max-width': '640px' }">
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+                </ng-template>
+        </p-galleria>
+    </div>
+    
+</div>
+
+
+
+
+
+</div>
